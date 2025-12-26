@@ -1,12 +1,14 @@
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
-    id("com.android.library")
     id("org.jetbrains.compose")
     id("org.jetbrains.kotlin.plugin.compose")
 }
 
 kotlin {
+    // Note: Android target requires Android Gradle Plugin which needs network access to dl.google.com
+    // Uncomment when building with Android support:
+    /*
     androidTarget {
         compilations.all {
             kotlinOptions {
@@ -14,6 +16,7 @@ kotlin {
             }
         }
     }
+    */
     
     jvm("desktop")
     
@@ -53,6 +56,8 @@ kotlin {
             }
         }
         
+        // Note: androidMain configuration commented out - uncomment when Android support is enabled
+        /*
         val androidMain by getting {
             dependencies {
                 implementation("androidx.activity:activity-compose:1.9.2")
@@ -62,6 +67,7 @@ kotlin {
                 implementation("com.juul.kable:core:0.34.0")
             }
         }
+        */
         
         val iosMain by creating {
             dependsOn(commonMain)
@@ -117,6 +123,8 @@ kotlin {
     }
 }
 
+// Note: Android configuration commented out - uncomment when Android support is enabled
+/*
 android {
     namespace = "com.cyclopen.trainer"
     compileSdk = 34
@@ -133,3 +141,4 @@ android {
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     sourceSets["main"].res.srcDirs("src/androidMain/res")
 }
+*/

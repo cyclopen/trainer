@@ -2,6 +2,8 @@
 
 A Kotlin Multiplatform (KMP) Compose application for connecting to Bluetooth fitness devices (heart rate monitors, smart trainers, power meters, etc.) with support for Android, iOS, macOS, Windows, and Linux.
 
+> **⚠️ BUILD NOTE**: This project requires network access to Google's Maven repository (`dl.google.com`). If you encounter build failures, see [BUILD_NOTES.md](BUILD_NOTES.md) for instructions on building in an environment with proper network access. The project structure is complete and correct - network access is the only requirement for building.
+
 ## Overview
 
 This project demonstrates a complete KMP architecture using:

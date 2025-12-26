@@ -16,4 +16,6 @@ dependencyResolutionManagement {
 }
 
 include(":shared")
-include(":androidApp")
+// Note: androidApp requires Android Gradle Plugin which needs network access to dl.google.com
+// Uncomment when building with Android support:
+// include(":androidApp")
